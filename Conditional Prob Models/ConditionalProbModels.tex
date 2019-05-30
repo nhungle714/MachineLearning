@@ -1,0 +1,240 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[ruled]{article}
+\usepackage{courier}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose}
+\usepackage{color}
+\usepackage{url}
+\usepackage{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=true]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+%% Special footnote code from the package 'stblftnt.sty'
+%% Author: Robin Fairbairns -- Last revised Dec 13 1996
+\let\SF@@footnote\footnote
+\def\footnote{\ifx\protect\@typeset@protect
+    \expandafter\SF@@footnote
+  \else
+    \expandafter\SF@gobble@opt
+  \fi
+}
+\expandafter\def\csname SF@gobble@opt \endcsname{\@ifnextchar[%]
+  \SF@gobble@twobracket
+  \@gobble
+}
+\edef\SF@gobble@opt{\noexpand\protect
+  \expandafter\noexpand\csname SF@gobble@opt \endcsname}
+\def\SF@gobble@twobracket[#1]#2{}
+
+\@ifundefined{date}{}{\date{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\makeatother
+
+\usepackage{listings}
+\lstset{backgroundcolor={\color{white}},
+basicstyle={\footnotesize\ttfamily},
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+commentstyle={\color{mygreen}},
+deletekeywords={...},
+escapeinside={\%*}{*)},
+extendedchars=true,
+frame=shadowbox,
+keepspaces=true,
+keywordstyle={\color{blue}},
+language=Python,
+morekeywords={*,...},
+numbers=none,
+numbersep=5pt,
+numberstyle={\tiny\color{mygray}},
+rulecolor={\color{black}},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+stepnumber=1,
+stringstyle={\color{mymauve}},
+tabsize=2}
+
+ 
+\begin{document}
+
+\global\long\def\reals{\mathbf{R}}
+ \global\long\def\integers{\mathbf{Z}}
+\global\long\def\naturals{\mathbf{N}}
+ \global\long\def\rationals{\mathbf{Q}}
+\global\long\def\ca{\mathcal{A}}
+\global\long\def\cb{\mathcal{B}}
+ \global\long\def\cc{\mathcal{C}}
+ \global\long\def\cd{\mathcal{D}}
+\global\long\def\ce{\mathcal{E}}
+\global\long\def\cf{\mathcal{F}}
+\global\long\def\cg{\mathcal{G}}
+\global\long\def\ch{\mathcal{H}}
+\global\long\def\ci{\mathcal{I}}
+\global\long\def\cj{\mathcal{J}}
+\global\long\def\ck{\mathcal{K}}
+\global\long\def\cl{\mathcal{L}}
+\global\long\def\cm{\mathcal{M}}
+\global\long\def\cn{\mathcal{N}}
+\global\long\def\co{\mathcal{O}}
+\global\long\def\cp{\mathcal{P}}
+\global\long\def\cq{\mathcal{Q}}
+\global\long\def\calr{\mathcal{R}}
+\global\long\def\cs{\mathcal{S}}
+\global\long\def\ct{\mathcal{T}}
+\global\long\def\cu{\mathcal{U}}
+\global\long\def\cv{\mathcal{V}}
+\global\long\def\cw{\mathcal{W}}
+\global\long\def\cx{\mathcal{X}}
+\global\long\def\cy{\mathcal{Y}}
+\global\long\def\cz{\mathcal{Z}}
+\global\long\def\ind#1{1(#1)}
+\global\long\def\pr{\mathbb{P}}
+
+\global\long\def\ex{\mathbb{E}}
+\global\long\def\var{\textrm{Var}}
+\global\long\def\cov{\textrm{Cov}}
+\global\long\def\sgn{\textrm{sgn}}
+\global\long\def\sign{\textrm{sign}}
+\global\long\def\kl{\textrm{KL}}
+\global\long\def\law{\mathcal{L}}
+\global\long\def\eps{\varepsilon}
+\global\long\def\convd{\stackrel{d}{\to}}
+\global\long\def\eqd{\stackrel{d}{=}}
+\global\long\def\del{\nabla}
+\global\long\def\loss{\ell}
+\global\long\def\tr{\operatorname{tr}}
+\global\long\def\trace{\operatorname{trace}}
+\global\long\def\diag{\text{diag}}
+\global\long\def\rank{\text{rank}}
+\global\long\def\linspan{\text{span}}
+\global\long\def\proj{\text{Proj}}
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}
+\global\long\def\bfx{\mathbf{x}}
+\global\long\def\bfy{\mathbf{y}}
+\global\long\def\bfl{\mathbf{\lambda}}
+\global\long\def\bfm{\mathbf{\mu}}
+\global\long\def\calL{\mathcal{L}}
+\global\long\def\vw{\boldsymbol{w}}
+\global\long\def\vx{\boldsymbol{x}}
+\global\long\def\vxi{\boldsymbol{\xi}}
+\global\long\def\valpha{\boldsymbol{\alpha}}
+\global\long\def\vbeta{\boldsymbol{\beta}}
+\global\long\def\vsigma{\boldsymbol{\sigma}}
+\global\long\def\vmu{\boldsymbol{\mu}}
+\global\long\def\vtheta{\boldsymbol{\theta}}
+\global\long\def\vd{\boldsymbol{d}}
+\global\long\def\vs{\boldsymbol{s}}
+\global\long\def\vt{\boldsymbol{t}}
+\global\long\def\vh{\boldsymbol{h}}
+\global\long\def\ve{\boldsymbol{e}}
+\global\long\def\vf{\boldsymbol{f}}
+\global\long\def\vg{\boldsymbol{g}}
+\global\long\def\vz{\boldsymbol{z}}
+\global\long\def\vk{\boldsymbol{k}}
+\global\long\def\va{\boldsymbol{a}}
+\global\long\def\vb{\boldsymbol{b}}
+\global\long\def\vv{\boldsymbol{v}}
+\global\long\def\vy{\boldsymbol{y}}
+
+
+\title{Machine Learning and Computational Statistics\\
+Conditional Probability Models}
+
+\maketitle
+\textbf{Intro}: This document consists of concepts and exercises related to Conditional Probability Model. The core idea lies in the frequentist's methodology in which parameters (e.g., $\theta$) is not a random variable. \\ 
+
+Learning objectives of  Conditional Probability Models include: \\
+
+\begin{enumerate}
+\item Point estimation 
+	\begin{enumerate}
+	\item One point of statistical problem is point estimation
+	\item A statistic s = s($D$) is any function of the data
+	\item A statistic $\hat{\theta}$ ($D$) taking values in $\Theta$ is a point estimator of $\theta$
+	\item A good point estimator will have $\hat{\theta} \approx \theta$
+	\item Desirable statistical properties of point estimators are: 
+		\begin{enumerate}
+			\item Consistency: As data size $n \rightarrow \inf$, we get $\hat{\theta}_n \rightarrow \theta$.
+			\item Efficiency: $\hat{\theta}_n$ is as accurate as we can get from a sample of size n.
+		\end{enumerate}
+	\item Maximum likelihood estimators (MLE) are consistent and efficient under reasonable conditions.
+	\end{enumerate}
+	
+\item Common approaches to getting a point estimator for $\theta$
+	\begin{enumerate}
+		\item Maximum Likelihood (MLE)
+				\begin{enumerate}
+				\item The likelihood of an estimate of a probability distribution for some data $D$. 
+\[
+p(D | \theta) = \prod_{i=1}^{n} p(y_i | \theta)
+\]
+\[L_D(\theta) = log p(D | \theta)\]
+
+				\item The MLE for some parameter $\theta$ of a probability model. 
+\[
+\hat{\theta}_{MLE} = \underset{\theta \in \Theta}{\mathrm{argmax}} L_D (\theta) 
+\]
+				\item Describe the basic structure of a linear probabilistic model, in terms of 1. a parameter $\theta$ of the probablistic model, 2. a linear score function, 3. a transfer function (kin to a "response function" or "inverse link" function, though we have relaxed requirements on the parameter theta).
+				\item We can use MLE to find $w$ by represent the parameter (e.g., $\theta$) as a function of $x, w$ and differentiate log-likelihood of the set-up probabilistic model to find $w$.
+				\item Common transfer functions for some distributions and why: 
+					   \begin{enumerate}
+					   \item bernoulli
+					   \item poisson: $\lambda = \psi(w^Tx) = \exp^{w^Tx}$
+					   \item gaussian: $y | x \sim \mathcal{N}(w^Tx, \sigma^2)$
+					   \item categorical distributions: $\psi(s) = \psi(s_0, s_1, ... s_n) =( \frac{\exp^s_0}{\sum_{i=1}^{n} \exp^{s_i}}, \frac{\exp^s_1}{\sum_{i=1}^{n} \exp^{s_i}}, ..., \frac{\exp^s_n}{\sum_{i=1}^{n} \exp^{s_i}}   )$
+					   \end{enumerate}  
+				\end{enumerate}
+	 \item Method of Moment
+	 \item Maximum A Posterior (MAP) (Bayesian method)
+	 \[
+		P(\theta | D) = \frac{P(D|\theta) * P(\theta)}{P(D)} \propto P(D|\theta) * P(\theta)
+		\]
+
+      \[
+      \begin{split}
+      \hat{\theta}_{MAP} &= \underset{\theta}{\mathrm{argmax}}P(D|\theta) * P(\theta) \\
+      &= \underset{\theta}{\mathrm{argmax}} log P(D|\theta) * P(\theta) \\
+      &= \underset{\theta}{\mathrm{argmax}} log \prod_{i=1}^{n} P(y_i | x_i, w) * P(\theta) \\
+      &= \underset{\theta}{\mathrm{argmax}}  \sum_{i=1}^{n} log P(y_i | x_i, w) * P(\theta) \\
+      \end{split}
+      \]     
+
+	\end{enumerate}
+
+\item \href{https://wiseodd.github.io/techblog/2017/01/01/mle-vs-map/}{MLE vs. MAP}
+\item Concept check questions \href{https://davidrosenberg.github.io/mlcourse/ConceptChecks/10-Lab-Check_sol.pdf}{Conditional Probability Models}   
+
+%\includepdf[pages=28-29,pagecommand={},width=\textwidth]{08a-bayesian-regression}
+
+\end{enumerate}
+
+
+
+\end{document}
